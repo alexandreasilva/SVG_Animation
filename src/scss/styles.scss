@@ -1,0 +1,147 @@
+$color-font: white;
+$color-bg-default: black;
+$font-default: Arial, Helvetica, sans-serif;
+
+* {
+    background-color: $color-bg-default;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-default;
+    margin: 0;
+}
+
+h1,
+h2 {
+    color: $color-bg-default;
+    text-shadow:
+        -1px -1px 0px #DF0000,
+        -1px 1px 0px #48BF00,
+        1px -1px 0px #ffd700,
+        1px 0px 0px $color-font;
+    text-align: center;
+    width: 100%;
+
+}
+
+header {
+    background-color: $color-bg-default;
+    width: 100vw;
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+
+    h1 {
+        margin-top: 1rem;
+        position: relative;
+        z-index: 9;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--3 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+.gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.gallery__item--5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.gallery__item--6 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.waves {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 110%;
+
+    .wave-01 {
+        animation: wave1 0.1s ease-in-out infinite alternate;
+
+    }
+
+    .wave-02 {
+        animation: wave2 .01s ease-in-out infinite alternate;
+    }
+
+    .wave-03 {
+        animation: wave2 0.1s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes wave1 {
+    from {
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes wave2 {
+    from {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes wave3 {
+    from {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes dash1 {
+    from {
+        stroke-dashoffset: 2000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@import 'player';
